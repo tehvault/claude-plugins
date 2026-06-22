@@ -1,0 +1,132 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "tehvault",
+  "description": "Tehvault's internal Claude Code marketplace \u2014 shared skills and MCP servers for the whole team.",
+  "owner": {
+    "name": "Tehvault",
+    "email": "pratik.sawant@tehvault.com"
+  },
+  "plugins": [
+    {
+      "name": "tehvault-toolkit",
+      "description": "Tehvault's shared Claude Code toolkit: graphify (knowledge-graph), ui-ux-pro-max and flutter-ui-ux (design intelligence) skills, plus the code-review-graph MCP server. NOTE: graphify and code-review-graph require external CLIs \u2014 see the repo README for the one-time pip install.",
+      "author": {
+        "name": "Tehvault"
+      },
+      "category": "development",
+      "version": "1.0.0",
+      "source": "./tehvault-toolkit"
+    },
+    {
+      "name": "context7",
+      "description": "[curated by Tehvault] Live, version-accurate docs for any library/framework \u2014 stops stale-API hallucinations.  \u2014  Upstash Context7 MCP server for up-to-date documentation lookup. Pull version-specific documentation and code examples directly from source repositories into your LLM context.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "external_plugins/context7",
+        "ref": "main"
+      },
+      "category": "development",
+      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/context7"
+    },
+    {
+      "name": "serena",
+      "description": "[curated by Tehvault] Semantic code navigation & editing across large codebases (LSP-powered).  \u2014  Semantic code analysis MCP server providing intelligent code understanding, refactoring suggestions, and codebase navigation through language server protocol integration.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "external_plugins/serena",
+        "ref": "main"
+      },
+      "category": "development",
+      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/serena"
+    },
+    {
+      "name": "playwright",
+      "description": "[curated by Tehvault] Browser automation & end-to-end testing for the web frontends.  \u2014  Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, click elements, and perform automated browser testing workflows.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "external_plugins/playwright",
+        "ref": "main"
+      },
+      "category": "testing",
+      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/playwright"
+    },
+    {
+      "name": "github",
+      "description": "[curated by Tehvault] PR / issue / repo workflows from inside Claude Code.  \u2014  Official GitHub MCP server for repository management. Create issues, manage pull requests, review code, search repositories, and interact with GitHub's full API directly from Claude Code.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "external_plugins/github",
+        "ref": "main"
+      },
+      "category": "productivity",
+      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/github"
+    },
+    {
+      "name": "sentry",
+      "description": "[curated by Tehvault] Pull live error & performance data from Sentry while debugging.  \u2014  Sentry error monitoring integration. Access error reports, analyze stack traces, search issues by fingerprint, and debug production errors directly from your development environment.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/getsentry/sentry-for-claude.git",
+        "sha": "9ab3551758913a4144517d4fafb71476a48c64f8"
+      },
+      "category": "monitoring",
+      "homepage": "https://github.com/getsentry/sentry-for-claude/tree/main"
+    },
+    {
+      "name": "stripe",
+      "description": "[curated by Tehvault] Work with the Stripe API \u2014 directly relevant to your Checkout/booking flows.  \u2014  Stripe development plugin for Claude",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/stripe/ai.git",
+        "path": "providers/claude/plugin",
+        "ref": "main",
+        "sha": "d9527bfc2d0993f3d2a650501e53e4f68d179ca3"
+      },
+      "category": "development",
+      "homepage": "https://github.com/stripe/ai/tree/main/providers/claude/plugin"
+    },
+    {
+      "name": "figma",
+      "description": "[curated by Tehvault] Pull designs & specs from Figma into UI work (pairs with your UI/UX skills).  \u2014  Figma design platform integration. Access design files, extract component information, read design tokens, and translate designs into code. Bridge the gap between design and development workflows.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/figma/mcp-server-guide.git",
+        "sha": "2efd0e37d10c35c4a7cf6d2b7381c9dc1a569bd4"
+      },
+      "category": "design",
+      "homepage": "https://github.com/figma/mcp-server-guide"
+    },
+    {
+      "name": "semgrep",
+      "description": "[curated by Tehvault] Static security scanning \u2014 valuable for a payments / vault product.  \u2014  Semgrep catches security vulnerabilities in real-time and guides Claude to write secure code from the start.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/semgrep/mcp-marketplace.git",
+        "path": "plugin",
+        "sha": "18771d9a7f78b0cb15711ad759ab253b20aeb45d"
+      },
+      "category": "security",
+      "homepage": "https://github.com/semgrep/mcp-marketplace.git"
+    },
+    {
+      "name": "skill-creator",
+      "description": "[curated by Tehvault] Scaffold NEW custom skills so the team can keep growing this toolkit.  \u2014  Create new skills, improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize an existing skill, run evals to test a skill, or benchmark skill performance with variance analysis.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/skill-creator",
+        "ref": "main"
+      },
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "category": "development",
+      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# Python caches (in case any skill scripts get run in-place)
+__pycache__/
+*.pyc
+*.pyo
+
+# OS / editor cruft
+.DS_Store
+*.swp
+
+# Local Claude state — never commit machine-specific config here
+.claude/settings.local.json

@@ -1,0 +1,13 @@
+{
+  "name": "tehvault-toolkit",
+  "description": "Tehvault's shared Claude Code toolkit: graphify, ui-ux-pro-max, and flutter-ui-ux skills, plus the code-review-graph MCP server.",
+  "version": "1.0.0",
+  "keywords": [
+    "tehvault",
+    "skills",
+    "mcp",
+    "ui-ux",
+    "code-review",
+    "knowledge-graph"
+  ]
+}
