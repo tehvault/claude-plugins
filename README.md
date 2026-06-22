@@ -41,7 +41,11 @@ stack. They show up in `/plugin` so teammates can install what they need:
 `playwright` (browser/E2E) · `github` (PR/issue workflows) ·
 `sentry` (error monitoring) · `stripe` (payments — our Checkout/booking flows) ·
 `figma` (design handoff) · `semgrep` (security scanning) ·
-`skill-creator` (scaffold new custom skills).
+`skill-creator` (scaffold new custom skills) · `firebase` (Firestore/auth/functions) ·
+`chrome-devtools-mcp` (live web debugging) · `mongodb` (DB explore/query) ·
+`expo` (React Native) · `feature-dev` (multi-agent feature workflow) ·
+`code-review` (multi-agent PR review) · `commit-commands` (git/PR helpers) ·
+`linear` (issue tracking) · `notion` (docs) · `slack` (comms).
 
 ---
 

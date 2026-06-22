@@ -127,6 +127,135 @@
       },
       "category": "development",
       "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator"
+    },
+    {
+      "name": "firebase",
+      "description": "[curated by Tehvault] Firebase MCP \u2014 Firestore, auth, cloud functions; matches your firebase-rbac work.  \u2014  Google Firebase MCP integration. Manage Firestore databases, authentication, cloud functions, hosting, and storage. Build and manage your Firebase backend directly from your development workflow.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "external_plugins/firebase",
+        "ref": "main"
+      },
+      "category": "database",
+      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/firebase"
+    },
+    {
+      "name": "chrome-devtools-mcp",
+      "description": "[curated by Tehvault] Drive/inspect a live Chrome browser \u2014 debug your web frontends & capture perf traces.  \u2014  Control and inspect a live Chrome browser from your coding agent. Record performance traces, analyze network requests, check console messages with source-mapped stack traces, and automate browser actions with Puppeteer.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp.git",
+        "sha": "38dd346805416c8bff2196e73c1410ca78d6f397"
+      },
+      "category": "development",
+      "homepage": "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+    },
+    {
+      "name": "mongodb",
+      "description": "[curated by Tehvault] MongoDB MCP + skills \u2014 connect, explore, and query data from the Node microservices.  \u2014  Official Claude plugin for MongoDB (MCP Server + Skills). Connect to databases, explore data, manage collections, optimize queries, generate reliable code, implement best practices, develop advanced features, and more.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/mongodb/agent-skills.git",
+        "sha": "9ea7387c7a1638604542c6efd52e5efc6a7fc393"
+      },
+      "category": "database",
+      "homepage": "https://www.mongodb.com/docs/mcp-server/overview/"
+    },
+    {
+      "name": "expo",
+      "description": "[curated by Tehvault] Expo / React Native build, deploy, and debug skills.  \u2014  Official Expo skills for building, deploying, upgrading, and debugging React Native apps with Expo. Covers UI development with Expo Router, SwiftUI and Jetpack Compose components, Tailwind CSS setup, API routes, data fetching, CI/CD workflows, App Store and Play Store deployment, SDK upgrades, DOM components, and dev client distribution.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/expo/skills.git",
+        "path": "plugins/expo",
+        "ref": "main",
+        "sha": "b553ae4e1755bec11eac21517fe63040c7e07f2c"
+      },
+      "category": "development",
+      "homepage": "https://github.com/expo/skills/blob/main/plugins/expo/README.md"
+    },
+    {
+      "name": "feature-dev",
+      "description": "[curated by Tehvault] Anthropic's multi-agent feature-development workflow (explore \u2192 design \u2192 implement).  \u2014  Comprehensive feature development workflow with specialized agents for codebase exploration, architecture design, and quality review",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/feature-dev",
+        "ref": "main"
+      },
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "category": "development",
+      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/feature-dev"
+    },
+    {
+      "name": "code-review",
+      "description": "[curated by Tehvault] Anthropic's multi-agent PR review with confidence-based findings.  \u2014  Automated code review for pull requests using multiple specialized agents with confidence-based scoring to filter false positives",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/code-review",
+        "ref": "main"
+      },
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "category": "productivity",
+      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/code-review"
+    },
+    {
+      "name": "commit-commands",
+      "description": "[curated by Tehvault] Git helpers for commit / push / PR creation.  \u2014  Commands for git commit workflows including commit, push, and PR creation",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/commit-commands",
+        "ref": "main"
+      },
+      "author": {
+        "name": "Anthropic",
+        "email": "support@anthropic.com"
+      },
+      "category": "productivity",
+      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/commit-commands"
+    },
+    {
+      "name": "linear",
+      "description": "[curated by Tehvault] Linear issue tracking \u2014 create/manage issues & projects.  \u2014  Linear issue tracking integration. Create issues, manage projects, update statuses, search across workspaces, and streamline your software development workflow with Linear's modern issue tracker.",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "external_plugins/linear",
+        "ref": "main"
+      },
+      "category": "productivity",
+      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/linear"
+    },
+    {
+      "name": "notion",
+      "description": "[curated by Tehvault] Notion workspace \u2014 search pages, create/update docs & databases.  \u2014  Notion workspace integration. Search pages, create and update documents, manage databases, and access your team's knowledge base directly from Claude Code for seamless documentation workflows.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/makenotion/claude-code-notion-plugin.git",
+        "sha": "9847f2aa1a15f25df35ed1fb7b4557dbb60cd651"
+      },
+      "category": "productivity",
+      "homepage": "https://github.com/makenotion/claude-code-notion-plugin"
+    },
+    {
+      "name": "slack",
+      "description": "[curated by Tehvault] Slack workspace \u2014 search messages, read channels & threads.  \u2014  Slack workspace integration. Search messages, access channels, read threads, and stay connected with your team's communications while coding. Find relevant discussions and context quickly.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/slackapi/slack-mcp-plugin.git",
+        "sha": "9ae6855c4cf81ce8ecd23b12560ff295721c0d07"
+      },
+      "category": "productivity",
+      "homepage": "https://github.com/slackapi/slack-mcp-plugin/tree/main"
     }
   ]
 }
