@@ -8,36 +8,43 @@
 #   1. code-review-graph  → the MCP server bundled in this plugin
 #   2. graphify           → the CLI + MCP server the `graphify` skill drives
 #
-# This script installs both and (optionally) registers the graphify MCP
-# server at user scope so the graphify skill is fully wired up.
+# These are CLI *applications*, so we install them with pipx (isolated venvs).
+# This avoids the "externally-managed-environment" (PEP 668) error you get from
+# plain `pip install` on Homebrew/modern Python.
 #
 # Usage:  bash scripts/install-deps.sh
 #
 set -euo pipefail
 
-PY=python3
-PIP="$PY -m pip"
+# --- ensure pipx is available -------------------------------------------------
+if ! command -v pipx >/dev/null 2>&1; then
+  echo "==> pipx not found — installing it"
+  if command -v brew >/dev/null 2>&1; then
+    brew install pipx
+  else
+    python3 -m pip install --user pipx
+  fi
+  pipx ensurepath || true
+  # pipx ensurepath edits your shell rc; make this session see it too.
+  export PATH="$HOME/.local/bin:$PATH"
+fi
 
-echo "==> Installing code-review-graph (MCP server for the code-review-graph plugin server)"
-$PIP install --user --upgrade code-review-graph
+install_or_upgrade() {  # $1 = pipx package name, $2 = human label
+  echo "==> Installing/upgrading $2"
+  pipx install "$1" 2>/dev/null || pipx upgrade "$1"
+}
 
-echo "==> Installing graphify (provides 'graphify' + 'graphify-mcp')"
-# NOTE: the PyPI distribution name is 'graphifyy' (double y); it installs the
+# code-review-graph: PyPI name == 'code-review-graph', provides 'code-review-graph'
+install_or_upgrade "code-review-graph" "code-review-graph (MCP server)"
+
+# graphify: PyPI distribution name is 'graphifyy' (double y); it installs the
 # 'graphify' and 'graphify-mcp' executables.
-$PIP install --user --upgrade graphifyy
-
-# Make sure the user bin dir is on PATH (pip --user installs land here).
-USER_BIN="$($PY -m site --user-base)/bin"
-case ":$PATH:" in
-  *":$USER_BIN:"*) ;;
-  *) echo "==> NOTE: add '$USER_BIN' to your PATH (e.g. in ~/.zshrc):"
-     echo "       export PATH=\"$USER_BIN:\$PATH\"" ;;
-esac
+install_or_upgrade "graphifyy" "graphify (graphify + graphify-mcp)"
 
 echo
 echo "==> Verifying binaries"
-command -v code-review-graph >/dev/null && code-review-graph -v || echo "   (!) code-review-graph not on PATH yet — see PATH note above"
-command -v graphify          >/dev/null && graphify --version 2>/dev/null || echo "   (!) graphify not on PATH yet — see PATH note above"
+command -v code-review-graph >/dev/null && code-review-graph -v || echo "   (!) code-review-graph not on PATH — open a new terminal (pipx ensurepath) and retry"
+command -v graphify          >/dev/null && graphify --version 2>/dev/null || echo "   (!) graphify not on PATH — open a new terminal and retry"
 
 echo
 echo "==> Optional: register the graphify MCP server (per-user graph file)"
